@@ -1,0 +1,43 @@
+34 functies moeten worden geprogrammeerd (exclusief de bonus)
+
+Programmed
+
+made - memset
+made - bzero
+made - memcpy
+made - memccpy
+made - memmove
+made - memchr
+made - memcmp
+made - strlen
+made - strlcpy
+made - strlcat
+made - strchr
+
+made - strrchr
+made - strnstr
+made - strncmp
+made - atoi
+made - isalpha
+made - isdigit
+made - isalnum
+made - isascii
+made - isprint
+made - toupper
+made - tolower
+
+made - calloc
+made - strdup
+
+made - ft_substr
+---------------ft_strjoin
+---------------ft_strtrim
+
+---------------ft_split <- zit er al in
+---------------ft_itoa
+made - ft_strmapi
+
+made - ft_putchar_fd
+made - ft_putstr_fd
+made - ft_putendl_fd
+made - ft_putnbr_fd

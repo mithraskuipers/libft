@@ -1,0 +1,3 @@
+strtrim
+strjoin
+controleren of er nog meer functies bij moeten
