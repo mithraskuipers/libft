@@ -1,12 +1,23 @@
-NAME = libft.a
+# 'make' creates .o files for each function as well as the main library file, libft.a
+# 'make re' removes all .o & .a files then remakes them
+# 'make clean' removes the .o files used to create the library
+# 'make fclean' removes the .o & .a files used to create the library
 
-CC = gcc
+# The $@ and $< are called automatic variables. The variable $@ represents the name of the
+# target and $< represents the first prerequisite required to create the output file. 
 
-CCFLAGS = -Wall -Werror -Wextra
+# SET UP
+NAME		=	libft.a
+CCFLAGS		=	-Wall -Wextra -Werror
+SRC_O		=	$(SRC:.c=.o)
+SRC_bonus_O	=	$(SRC_bonus:.c=.o)
 
-HEADER = libft.h
+# COLOR SETS
+COLOR_WHITE	=	\e[39m
+COLOR_RED	=	\e[31m
+COLOR_GREEN	=	\e[32m
 
-srcs = ft_memset.c \
+SRC = ft_memset.c \
 ft_bzero.c \
 ft_memcpy.c \
 ft_memccpy.c \
@@ -47,9 +58,7 @@ ft_putnbr_fd.c \
 #ft_strtrim.c \
 #boven ft_split.c
 
-srcs_objectfiles = $(srcs:.c=.o)
-
-#bonus = ft_lstnew.c \
+#SRC_bonus = ft_lstnew.c \
 #ft_lstadd_front.c \
 #ft_lstsize.c \
 #ft_lstlast.c \
@@ -59,25 +68,32 @@ srcs_objectfiles = $(srcs:.c=.o)
 #ft_lstiter.c \
 #ft_lstmap.c
 
+%.o: %.c
+	@echo "$(COLOR_RED)Compiling: $(COLOR_GREEN)$<$(COLOR_WHITE)"
+	@gcc $(CCFLAGS) -c -o $@ $<
+
+$(NAME): $(SRC_O)
+	@echo "Combine object files to create archive libft.a"
+	@ar rc $(NAME) $(SRC_O)
+	
+bonus: $(NAME) $(SRC_bonus_O)
+	@echo "Adding libft bonus functions to $<"
+	@ar rc $(NAME) $(SRC_bonus_O)
+
+.PHONY: all
 all: $(NAME)
 
-$(NAME): $(OBJ)
-	ar rcs $@ $^
-	
-%.o: %.c $(HEADER)
-	$(CC) -c $(CCFLAGS) -o $@ $<
+.PHONY: clean
+clean:
+	@echo "Removing all object (.o) files"
+	@rm -f $(SRC_O) $(SRC_bonus_O)
 
-# 'make' creates .o files for each function as well as the main library file, libft.a
-# 'make re' removes all .o & .a files then remakes them
-# 'make clean' removes the .o files used to create the library
-# 'make fclean' removes the .o & .a files used to create the library
+.PHONY: fclean
+fclean: clean
+	@echo "Removing $(NAME)"
+	@rm -f $(NAME)
 
+.PHONY: re
 re: fclean all
 
-clean:
-	rm -f $(srcs_objectfiles)
-
-fclean: clean
-	rm -f $(NAME)
-
-.PHONY: bonus re clean fclean
+.PHONY: all clean fclean re

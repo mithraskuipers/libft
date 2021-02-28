@@ -1,3 +1,5 @@
+
+2021.02.28 DIT WAS WELKE FUNCTIES GEMAAKT MOESTEN WORDEN VOLGENS PDF EN WAT IK AL HEB.
 34 functies moeten worden geprogrammeerd (exclusief de bonus)
 
 Programmed
@@ -30,11 +32,11 @@ made - calloc
 made - strdup
 
 made - ft_substr
----------------ft_strjoin
----------------ft_strtrim
+---------------ft_strjoin <- ONTBREEKT
+---------------ft_strtrim <- ONTBREEKT
 
----------------ft_split <- zit er al in
----------------ft_itoa
+---------------ft_split <- zit er al in MAAR MOET NOG WORDEN BEGREPEN
+---------------ft_itoa <- ONTBREEKT
 made - ft_strmapi
 
 made - ft_putchar_fd
