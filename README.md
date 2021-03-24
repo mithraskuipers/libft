@@ -1,1 +1,1 @@
-# libft WIP
+# libft WORK IN PROGRESS
