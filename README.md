@@ -1,5 +1,5 @@
 <p align="center">
-  <img width="444" height="180" src="https://raw.githubusercontent.com/mithraskuipers/mithraskuipers/main/readme_srcs/42_banner.png">
+  <img width="363" height="67" src="https://raw.githubusercontent.com/mithraskuipers/mithraskuipers/main/readme_srcs/amsterdam_42network.png">
 </p>
 
 # libft
