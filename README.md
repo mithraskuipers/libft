@@ -2,4 +2,4 @@
 
 [![42_banner](https://raw.githubusercontent.com/mithraskuipers/mithraskuipers/main/readme_srcs/42_banner.png)]()
 
-<div align=”center”>[[![42_banner](https://raw.githubusercontent.com/mithraskuipers/mithraskuipers/main/readme_srcs/42_banner.png)]()]</div>
+![A cute kitten](http://placekitten.com/200/300?style=centerme)
